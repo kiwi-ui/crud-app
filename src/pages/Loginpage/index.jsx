@@ -10,9 +10,9 @@ const Loginpage = ({onLogin}) => {
     
     const handleLogin = async () => {
       try {
-        const {data} = await Login(email, password);
-        console.log('Login successful:', data);
-        localStorage.setItem('token',data.token)
+        const response = await Login(email, password);
+        console.log('Login successful:', response);
+        localStorage.setItem('token',response.data.token)
         onLogin();
         navigate('/dashboard');
       } catch (error) {

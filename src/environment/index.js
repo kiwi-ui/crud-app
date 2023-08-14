@@ -1,4 +1,4 @@
 export const environment = {
-    baseUrl: 'http://reqres.in',
-    apiUrl: 'http://reqres.in/api/unknown/2'
+    baseUrl: 'https://reqres.in',
+    apiUrl: 'https://reqres.in/api'
 }
