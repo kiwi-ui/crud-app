@@ -1,9 +1,8 @@
 import axios from "axios";
-
-const BASE_URL = 'https://reqres.in/api';
+import { environment } from "../../environment";
 
 export const Login = (email, password) => {
-    return axios.post(`${BASE_URL}/login`, {
+    return axios.post(`${environment}/login`, {
         email,
         password
     });
