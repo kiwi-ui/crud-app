@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import Loginpage from './pages/Loginpage';
 import UserDetails from './pages/UserDetails';
+import NotFound from './pages/NotFound';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,6 +20,7 @@ function App() {
         <Route path="/users" element={ <Dashboard onLogout= { handleLogout } setUser= { setUser } setId = {setId}  />} />
         <Route path="/" element={ <Navigate to="/login" /> }/>
         <Route path={ `/users/${id}` } element={ <UserDetails user={user} />}/>
+        <Route path='*' element={ <NotFound /> }></Route>
       </Routes>
     </BrowserRouter>
   );
