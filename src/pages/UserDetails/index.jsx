@@ -20,17 +20,16 @@ const UserDetails = ({ user }) => {
 					</div>
 
 					<div className="bg-warning py-2 rounded-bottom-5">
-					<div className="container">
+						<div className="container">
+							<p className="mb-0 fw-semibold">First Name</p>
+							<p>{ user.first_name }</p>
 
-						<p className="mb-0 fw-semibold">First Name</p>
-						<p>{ user.first_name }</p>
+							<p className="mb-0 fw-semibold">Last Name</p>
+							<p>{ user.last_name }</p>
 
-						<p className="mb-0 fw-semibold">Last Name</p>
-						<p>{ user.last_name }</p>
-
-						<p className="mb-0 fw-semibold">Email</p>
-						<p>{ user.email }</p>
-					</div>
+							<p className="mb-0 fw-semibold">Email</p>
+							<p>{ user.email }</p>
+						</div>
 					</div>
 				</div>
 			}  
