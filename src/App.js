@@ -6,6 +6,7 @@ import UserDetails from './pages/UserDetails';
 import NotFound from './pages/NotFound';
 
 function App() {
+  // eslint-disable-next-line
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState();
   const [id, setId] = useState();
