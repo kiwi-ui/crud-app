@@ -19,15 +19,17 @@ const UserDetails = ({ user }) => {
 						</div>
 					</div>
 
-					<div className="bg-warning py-2 rounded-bottom-5">
+					<div className="bg-warning bg-opacity-75 py-2 rounded-bottom-5">
 						<div className="container">
 							<p className="mb-0 fw-semibold">First Name</p>
-							<p>{ user.first_name }</p>
+							<p className="mb-0 pb-1">{ user.first_name }</p>
 
-							<p className="mb-0 fw-semibold">Last Name</p>
-							<p>{ user.last_name }</p>
+							<div className="border-top border-bottom border-black py-1">
+								<p className="mb-0 fw-semibold">Last Name</p>
+								<p className="mb-0">{ user.last_name }</p>
+							</div>
 
-							<p className="mb-0 fw-semibold">Email</p>
+							<p className="mb-0 fw-semibold pt-1">Email</p>
 							<p>{ user.email }</p>
 						</div>
 					</div>
