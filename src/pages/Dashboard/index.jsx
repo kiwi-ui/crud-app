@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar'
-import { User } from '../../services/User'
+import { SingleUser, User } from '../../services/User'
+import { useNavigate } from 'react-router-dom'
 
-const Dashboard = () => {
+const Dashboard = ({setUser, setId}) => {
 	const [users, setUsers] = useState([])
+	const navigate = useNavigate();
 	
+	const getSingleUser = async (id) => {
+	  const { data } = await SingleUser(id);
+	  setId(data.data.id)
+	  setUser(data.data);
+	  navigate(`/users/${data.data.id}`)
+	}
+
 	useEffect(() => {
 		const getUserList = async () => {
 			try {
@@ -20,15 +29,12 @@ const Dashboard = () => {
 
 	return (
 	<>
-		<header>
-			<Navbar />
-		</header>
-
+		<Navbar />
 		<main className="container my-2">
 			<div className="row g-md-3 g-2">
 				{users && users.map(user => (
-					<div className="col-6 col-md-4">
-						<div className="card" key={ user.id }>
+					<div className="col-6 col-md-4" key={ user.id } onClick={ () => getSingleUser(user.id) }>
+						<div className="card">
 							<img src={user.avatar} className="card-img-top" alt={`${user.first_name}`} />
 						
 							<div className="card-body">
