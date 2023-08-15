@@ -47,14 +47,14 @@ const Loginpage = ({onLogin}) => {
                                     <input type="password" className="form-control" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                                 </div>
                             </form>
-                          { isLoading ? 
-
-                          <button className="btn btn-warning w-100" type="button" disabled>
-                              <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                              <span role="status">Loading...</span>
-                          </button> :
-                          <button type="button" className="btn btn-warning w-100" onClick={handleLogin}>Login</button>
-                          }
+                          
+                            { isLoading ? 
+                              <button className="btn btn-warning w-100" type="button" disabled>
+                                  <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                                  <span role="status">Loading...</span>
+                              </button> :
+                              <button type="button" className="btn btn-warning w-100" onClick={handleLogin}>Login</button>
+                            }
                         </div>
                     </div>
                 </div>
