@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Dashboard = ({setUser, setId}) => {
 	const [users, setUsers] = useState([])
+	const [currentPage, setCurrentPage] = useState(1)
 	const navigate = useNavigate();
 	
 	const getSingleUser = async (id) => {
@@ -14,39 +15,49 @@ const Dashboard = ({setUser, setId}) => {
 	  navigate(`/users/${data.data.id}`)
 	}
 
-	useEffect(() => {
-		const getUserList = async () => {
-			try {
-				const { data } = await User();
-				setUsers(data.data)
-			} catch (error) {
-				console.log(error);
-			}
-		};
+	const getUserList = async (page) => {
+		try {
+			const { data } = await User(page);
+			setUsers(data.data)
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
-		getUserList();
-	}, [])
+	useEffect(() => { getUserList() }, [])
+	const movePage = (e) => {
+		e.preventDefault();
+
+		getUserList(e.target.textContent);
+		setCurrentPage(prevPage => e.target.textContent);
+	}
 
 	return (
-	<>
-		<Navbar />
-		<main className="container my-2">
-			<div className="row g-md-3 g-2">
-				{users && users.map(user => (
-					<div className="col-6 col-md-4" key={ user.id } onClick={ () => getSingleUser(user.id) }>
-						<div className="card">
-							<img src={user.avatar} className="card-img-top" alt={`${user.first_name}`} />
-						
-							<div className="card-body">
-								<h5 className="card-title">{ user.first_name } { user.last_name }</h5>
-								<p className="card-text">{ user.email }</p>
+		<>
+			<Navbar />
+
+			<main className="container my-2">
+				<div className="row g-md-3 g-2">
+					{users && users.map(user => (
+						<div className="col-6 col-md-4" key={ user.id } onClick={ () => getSingleUser(user.id) }>
+							<div className="card">
+								<img src={user.avatar} className="card-img-top" alt={`${user.first_name}`} />
+							
+								<div className="card-body">
+									<h5 className="card-title">{ user.first_name } { user.last_name }</h5>
+									<p className="card-text">{ user.email }</p>
+								</div>
 							</div>
 						</div>
-					</div>
-				))}
-			</div>
-		</main>
-	</>
+					))}
+				</div>
+
+				<div className="d-flex justify-content-center flex-wrap mt-4">
+					<button className={` ${ +currentPage === 1 ? 'text-primary' : ''} btn  mx-1` } onClick={movePage}>1</button>
+					<button className={` ${ +currentPage === 2 ? 'text-primary' : ''} btn  mx-1` } onClick={movePage}>2</button>
+				</div>
+			</main>
+		</>
 
   )
 }
