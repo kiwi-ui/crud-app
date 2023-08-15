@@ -37,9 +37,9 @@ const Dashboard = ({setUser, setId}) => {
 			<Navbar />
 
 			<main className="container my-2">
-				<div className="row g-md-3 g-2">
+				<div className="row g-md-4 g-3">
 					{users && users.map(user => (
-						<div className="col-6 col-md-4" key={ user.id } onClick={ () => getSingleUser(user.id) }>
+						<div className="col-md-4" key={ user.id } onClick={ () => getSingleUser(user.id) }>
 							<div className="card">
 								<img src={user.avatar} className="card-img-top" alt={`${user.first_name}`} />
 							
