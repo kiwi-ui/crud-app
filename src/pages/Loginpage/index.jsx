@@ -14,7 +14,7 @@ const Loginpage = ({onLogin}) => {
         console.log('Login successful:', response);
         localStorage.setItem('token',response.data.token)
         onLogin();
-        navigate('/dashboard');
+        navigate('/users');
       } catch (error) {
         console.error('Login failed:', error);
         setError('Login failed. Please check your credentials.');
