@@ -40,10 +40,10 @@ const Dashboard = ({setUser, setId}) => {
 				<div className="row g-md-4 g-3">
 					{users && users.map(user => (
 						<div className="col-md-4" key={ user.id } onClick={ () => getSingleUser(user.id) }>
-							<div className="card">
+							<div className="card shadow">
 								<img src={user.avatar} className="card-img-top" alt={`${user.first_name}`} />
 							
-								<div className="card-body">
+								<div className="card-body bg-warning">
 									<h5 className="card-title">{ user.first_name } { user.last_name }</h5>
 									<p className="card-text">{ user.email }</p>
 								</div>
