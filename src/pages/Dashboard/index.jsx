@@ -4,16 +4,16 @@ import { SingleUser, User } from '../../services/User'
 import { useNavigate } from 'react-router-dom'
 
 const Dashboard = ({setUser, setId}) => {
-	const [users, setUsers] = useState([])
-	const [currentPage, setCurrentPage] = useState(1)
+	const [users, setUsers] = useState([]);
+	const [currentPage, setCurrentPage] = useState(1);
 	const navigate = useNavigate();
 	
 	const getSingleUser = async (id) => {
 	  const { data } = await SingleUser(id);
-	  setId(data.data.id)
+	  setId(data.data.id);
 	  setUser(data.data);
-	  navigate(`/users/${data.data.id}`)
-	}
+	  navigate(`/users/${data.data.id}`);
+	};
 
 	const getUserList = async (page) => {
 		try {
@@ -24,7 +24,7 @@ const Dashboard = ({setUser, setId}) => {
 		}
 	};
 
-	useEffect(() => { getUserList() }, [])
+	useEffect(() => { getUserList() }, []);
 	const movePage = (e) => {
 		e.preventDefault();
 
@@ -34,31 +34,30 @@ const Dashboard = ({setUser, setId}) => {
 
 	return (
 		<>
-			<Navbar />
+		    <Navbar />
 
-			<main className="container my-2">
-				<div className="row g-md-4 g-3">
-					{users && users.map(user => (
-						<div className="col-md-4" key={ user.id } onClick={ () => getSingleUser(user.id) }>
-							<div className="card shadow">
-								<img src={user.avatar} className="card-img-top" alt={`${user.first_name}`} />
+			  <main className="container my-2">
+				    <div className="row g-md-4 g-3">
+					    {users && users.map(user => (
+                  <div className="col-md-4" key={ user.id } onClick={ () => getSingleUser(user.id) }>
+                      <div className="card shadow rounded-3">
+                          <img src={ user.avatar } className="card-img-top" alt={ `${user.first_name}` } />
 							
-								<div className="card-body bg-warning">
-									<h5 className="card-title">{ user.first_name } { user.last_name }</h5>
-									<p className="card-text">{ user.email }</p>
-								</div>
-							</div>
-						</div>
-					))}
-				</div>
+                          <div className="card-body bg-warning rounded-bottom-3	">
+                              <h5 className="card-title">{ user.first_name } { user.last_name }</h5>
+                              <p className="card-text">{ user.email }</p>
+                          </div>
+                      </div>
+                  </div>
+              ))}
+            </div>
 
-				<div className="d-flex justify-content-center flex-wrap mt-4">
-					<button className={` ${ +currentPage === 1 ? 'text-primary' : ''} btn  mx-1` } onClick={movePage}>1</button>
-					<button className={` ${ +currentPage === 2 ? 'text-primary' : ''} btn  mx-1` } onClick={movePage}>2</button>
-				</div>
-			</main>
+            <div className="d-flex justify-content-center flex-wrap mt-4">
+                <button className={` ${ +currentPage === 1 ? 'text-primary' : '' } btn  mx-1` } onClick={ movePage }>1</button>
+                <button className={` ${ +currentPage === 2 ? 'text-primary' : '' } btn  mx-1` } onClick={ movePage }>2</button>
+            </div>
+        </main>
 		</>
-
   )
 }
 
