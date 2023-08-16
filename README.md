@@ -5,12 +5,15 @@ A web application that provide general to detail information about users in that
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
+- [Live Demo](#live-demo)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Running the Application](#running-the-application)
   - [Running Tests](#running-tests)
 - [Usage](#usage)
+  - [Loggin In](#logging-in)
+  - [Loggin Out](#logging-out)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -28,29 +31,6 @@ The User information App is a React-based web application that provides general 
 Check out the live demo of the User Information App:
 
 [View Live Demo](https://5watt.vercel.app)
-
-## Usage
-
-### Logging In
-
-To test the login functionality of the User Information App, follow these steps:
-
-1. Open the [Live Demo](https://5watt.vercel.app) of the app.
-2. You will be redirects to the login page (https://5watt.vercel.app/login).
-3. On the login page, enter the following credentials:
-   - Email: eve.holt@reqres.in
-   - Password: cityslicka
-4. Click the "Login" button.
-5. If the provided credentials are correct, you will be redirected to the dashboard page.
-
-Please note that this is a test environment, and the provided login credentials are for demonstration purposes only. No actual authentication or security measures are in place.
-
-### Logging Out
-
-To log out of the app, you can follow these steps:
-
-1. While on the dashboard page, click on the top-left corner icon in the navigation bar.
-2. You will be logged out and redirected to the login page.
 
 ## Getting Started
 Follow these steps to set up and run the this App on your local machine.
@@ -73,9 +53,25 @@ Make sure you have the following software installed:
 To run tests, use the following command: `npm test`
 
 ## Usage
-1. Make sure you have internet connection.
-2. Fill the search input to find the country.
-3. Click a country to show detail modal.
+
+### Logging In
+To test the login functionality of the User Information App, follow these steps:
+
+1. Open the [Live Demo](https://5watt.vercel.app) of the app.
+2. You will be redirects to the login page (https://5watt.vercel.app/login).
+3. On the login page, enter the following credentials:
+   - Email: eve.holt@reqres.in
+   - Password: cityslicka
+4. Click the "Login" button.
+5. If the provided credentials are correct, you will be redirected to the dashboard page.
+
+Please note that this is a test environment, and the provided login credentials are for demonstration purposes only. No actual authentication or security measures are in place.
+
+### Logging Out
+To log out of the app, you can follow these steps:
+
+1. While on the dashboard page, click on the top-left corner icon in the navigation bar.
+2. You will be logged out and redirected to the login page.
 
 ## Contributing
 We welcome contributions from the community. To contribute:
