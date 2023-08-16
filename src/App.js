@@ -8,8 +8,9 @@ import NotFound from './pages/NotFound';
 function App() {
   // eslint-disable-next-line
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState();
+    // eslint-disable-next-line
   const [id, setId] = useState();
+  const [user, setUser] = useState();
 
   const handleLogin = () => { setIsLoggedIn(true) };
   const handleLogout = () => { setIsLoggedIn(false) };
@@ -20,7 +21,7 @@ function App() {
         <Route path="/login" element={ <Loginpage onLogin= { handleLogin } />} />
         <Route path="/users" element={ <Dashboard onLogout= { handleLogout } setUser= { setUser } setId = {setId}  />} />
         <Route path="/" element={ <Navigate to="/login" /> }/>
-        <Route path={ `/users/${id}` } element={ <UserDetails user={user} />}/>
+        <Route path={ `/users/:id` } element={ <UserDetails user={ user } />}/>
         <Route path='*' element={ <NotFound /> }></Route>
       </Routes>
     </BrowserRouter>
