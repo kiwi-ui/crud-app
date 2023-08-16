@@ -5,7 +5,6 @@ A web application that provide general to detail information about users in that
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
-- [Live Demo](#live-demo)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -14,6 +13,7 @@ A web application that provide general to detail information about users in that
 - [Usage](#usage)
   - [Loggin In](#logging-in)
   - [Loggin Out](#logging-out)
+- [Live Demo](#live-demo)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -25,12 +25,6 @@ The User information App is a React-based web application that provides general 
 - Displaying list of registered users.
 - More user informations when clicked it.
 - Responsive design for different screen sizes.
-
-## Live Demo
-
-Check out the live demo of the User Information App:
-
-[View Live Demo](https://5watt.vercel.app)
 
 ## Getting Started
 Follow these steps to set up and run the this App on your local machine.
@@ -72,6 +66,10 @@ To log out of the app, you can follow these steps:
 
 1. While on the dashboard page, click on the top-left corner icon in the navigation bar.
 2. You will be logged out and redirected to the login page.
+
+## Live Demo
+Check out the live demo of the User Information App:
+[View Live Demo](https://5watt.vercel.app)
 
 ## Contributing
 We welcome contributions from the community. To contribute:
