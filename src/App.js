@@ -21,7 +21,7 @@ function App() {
         <Route path="/login" element={ <Loginpage onLogin= { handleLogin } />} />
         <Route path="/users" element={ <Dashboard onLogout= { handleLogout } setUser= { setUser } setId = {setId}  />} />
         <Route path="/" element={ <Navigate to="/login" /> }/>
-        <Route path={ `/users/:id` } element={ <UserDetails user={ user } />}/>
+        <Route path="/users/:id" element={ <UserDetails user={ user } />}/>
         <Route path='*' element={ <NotFound /> }></Route>
       </Routes>
     </BrowserRouter>

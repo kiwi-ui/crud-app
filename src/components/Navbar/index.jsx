@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link, redirect } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {FiLogOut} from 'react-icons/fi';
 
 const Navbar = () => {
+  const navigate = useNavigate()
   const handleLogout = () => {
     localStorage.removeItem('token');
-    redirect("/login")
+    navigate("/login");
   }
 
   return (
@@ -15,7 +16,7 @@ const Navbar = () => {
                 <Link className="mb-0 bg-warning text-black px-2 rounded-2 fw-bold navbar-brand" to="/users">CrossOver</Link>
 
                 <button className="p-0 btn" onClick={ handleLogout }>
-                    <FiLogOut className="fs-2 text-warning"/>
+                    <FiLogOut className="fs-4 text-warning"/>
                 </button>
             </div>
         </nav>
